@@ -1,5 +1,8 @@
 # Astro Starter Kit: Minimal
 
+[My Demo](https://benevolent-piroshki-de934e.netlify.app/)
+[YouTube](https://www.youtube.com/watch?v=Vp6GC3jKG20)
+
 ```
 npm init astro -- --template minimal
 ```
