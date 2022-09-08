@@ -1,0 +1,29 @@
+---
+import NavSideCircle from "./NavSideCircle.astro";
+---
+<nav class="inline-block lg:mr-24 lg:w-4 fixed left-percentage hidden xl:block">
+  <div class="absolute left-50 transform -translate-x-1/2 space-y-6 mt-36">
+    <NavSideCircle label='Home' classExtra='selected-circle' />
+    <NavSideCircle url='#work' label='Work'/>
+    <NavSideCircle url='#clients' label='Clients'/>
+    <NavSideCircle url='#hire' label='Hire'/>
+  </div>
+</nav>
+
+<script>
+  function updateList() {
+    const titles = [...document.querySelectorAll('h1, h2')].sort((a, b) => {
+      return Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top);
+    });
+
+    document.querySelectorAll(".selected-circle").forEach(c => c.classList.remove("selected-circle"));
+    
+    document.querySelectorAll(".nav-dot")[[...document.querySelectorAll('h1, h2')].indexOf(titles[0])].classList.add("selected-circle");
+  }
+
+  updateList();
+  window.addEventListener('scroll', () => {
+      updateList();
+  })
+
+</script>
