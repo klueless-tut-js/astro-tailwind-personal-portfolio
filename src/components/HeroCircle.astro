@@ -1,13 +1,14 @@
 ---
 export interface Props {
   label: string;
+  url?: string;
   classExtra?: string;
 }
 
-const { label, classExtra = '' } = Astro.props;
+const { label, url = '#', classExtra = '' } = Astro.props;
 const linkClass = `nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body ${classExtra}`;
 ---
-<a href="#" class={linkClass}>
+<a href={url} class={linkClass}>
   <span class='bg-black px-2 py-1 rounded-md ml-10 opacity-0'>{label}</span>
 </a>
 

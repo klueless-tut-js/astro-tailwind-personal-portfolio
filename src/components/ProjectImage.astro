@@ -1,0 +1,13 @@
+---
+export interface Props {
+  image: string;
+  classExtra?: string;
+}
+
+const { image, classExtra = '' } = Astro.props;
+const baseClass = 'w-full bg-nav h-36 lg:h-72 object-cover'
+const imageClass = `${baseClass} ${classExtra}`;
+const src = `/projects/${image}.jpg`;
+---
+
+<img src={src} class={imageClass}>
