@@ -23,6 +23,10 @@ html, body {
   z-index: -1;
 }
 
+.standard-section {
+  @apply flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full;
+}
+
 .secondary-title {
   @apply text-3xl font-bold;
 }
